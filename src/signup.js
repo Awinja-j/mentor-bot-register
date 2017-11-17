@@ -26,8 +26,9 @@ class Register extends Component {
 
   }
   handleClick(event){
-      const apiUrl = 'https://bot-production.herokuapp.com/register'
-      axios.post(apiUrl, this.state.content)
+    const headers = {headers: {'Access-Control-Allow-Origin': 'https://bot-production.herokuapp.com/register'}}; 
+    //   const apiUrl = 'https://bot-production.herokuapp.com/register'
+      axios.post(headers, this.state.content)
       .then(response=>console.log(response))
       .catch(error=>console.log(error))
 
